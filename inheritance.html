@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h2>JavaScript Class Inhertance</h2>
+    <p id="details"></p>
+
+    <script>
+      class Car {
+        constructor(brand) {
+          this.brand = brand;
+        }
+
+        present() {
+          return "I have a " + this.brand;
+        }
+      }
+
+      class Model extends Car {
+        constructor(brand, mod) {
+          super(brand);
+          this.mod = mod;
+        }
+
+        show() {
+          return this.present() + " , it is a " + this.mod;
+        }
+      }
+
+      let obCar = new Model("Toyota", "Premio");
+
+      document.getElementById("details").innerHTML = obCar.show();
+    </script>
+  </body>
+</html>
